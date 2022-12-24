@@ -63,11 +63,11 @@ class _FutureLoadingOverlayDialogState<T>
   @override
   Widget build(BuildContext context) {
     return widget.expanded
-        ? _buildLoadingDialogExpanded()
-        : _buildLoadingDialog();
+        ? _buildExpandedLoadingDialog()
+        : _buildSimpleLoadingDialog();
   }
 
-  Widget _buildLoadingDialog() {
+  Widget _buildSimpleLoadingDialog() {
     return Dialog(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -85,7 +85,7 @@ class _FutureLoadingOverlayDialogState<T>
     );
   }
 
-  Widget _buildLoadingDialogExpanded() {
+  Widget _buildExpandedLoadingDialog() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       // mainAxisSize: MainAxisSize.min,

@@ -17,7 +17,7 @@ A Loading overlay dialog for showing future loading UI.
 ## Features
 
 - Show simple loading dialog
-- Option to show as expanded to full screen or minimal loading dialog
+- Option to show expanded dialog (full screen) or simple loading dialog
 - Hide when future is completed with result or exception
 
 ## Getting started
