@@ -1,6 +1,6 @@
 name: future_loading_overlay
 description: A Loading overlay dialog for showing future loading UI.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/kornperkus/future_loading_overlay
 
 environment:
