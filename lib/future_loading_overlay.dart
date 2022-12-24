@@ -8,12 +8,14 @@ Future<T?> showFutureLoadingOverlay<T>({
   required BuildContext context,
   required Future<T> future,
   bool barrierDismissible = false,
+  bool expanded = false,
 }) {
   return showDialog<T>(
     context: context,
     barrierDismissible: barrierDismissible,
     builder: (context) => FutureLoadingOverlayDialog(
       future: future,
+      expanded: expanded,
     ),
   );
 }
@@ -21,10 +23,12 @@ Future<T?> showFutureLoadingOverlay<T>({
 /// A loading overlay dialog
 class FutureLoadingOverlayDialog<T> extends StatefulWidget {
   final Future<T> future;
+  final bool expanded;
 
   const FutureLoadingOverlayDialog({
     Key? key,
     required this.future,
+    required this.expanded,
   }) : super(key: key);
 
   @override
@@ -58,7 +62,9 @@ class _FutureLoadingOverlayDialogState<T>
 
   @override
   Widget build(BuildContext context) {
-    return _buildLoadingDialog();
+    return widget.expanded
+        ? _buildLoadingDialogExpanded()
+        : _buildLoadingDialog();
   }
 
   Widget _buildLoadingDialog() {
