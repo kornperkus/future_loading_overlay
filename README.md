@@ -11,29 +11,51 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## About
+A Loading overlay dialog for showing future loading UI.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Show simple loading dialog
+- Option to show as expanded to full screen or minimal loading dialog
+- Hide when future is completed with result or exception
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, add `future_loading_overlay` as a dependency in your pubspec.yaml file.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the library.
 
 ```dart
-const like = 'sample';
+import 'package:future_loading_overlay/future_loading_overlay.dart';
 ```
 
-## Additional information
+Then invoke the `showFutureLoadingOverlay` function anywhere in your Dart code.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+showFutureLoadingOverlay(
+    context: context,
+    future: _yourFutureFunction(),
+);
+```
+
+The `showFutureLoadingOverlay` function also takes an optional `expanded` that will be used to show full screen loading overlay.
+
+```dart
+showFutureLoadingOverlay(
+    context: context,
+    future: _yourFutureFunction(),
+    expanded: true,
+);
+```
+
+To get a result of future annotate a function with type `<T>` and create a variable that store a result of your future.
+
+```dart
+final result = await showFutureLoadingOverlay<int>(
+    context: context,
+    future: _yourFutureFunction(),
+);
+```
