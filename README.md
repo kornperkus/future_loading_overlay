@@ -14,6 +14,9 @@ and the Flutter guide for
 ## About
 A Loading overlay dialog for showing future loading UI.
 
+<img src="screenshots/simple_loading_dialog.png" width="150" alt="simple_dialog">
+<img src="screenshots/expanded_loading_dialog.png" width="150" alt="expanded_dialog">
+
 ## Features
 
 - Show simple loading dialog
