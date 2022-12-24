@@ -54,7 +54,7 @@ showFutureLoadingOverlay(
 );
 ```
 
-To get a result of future annotate a function with type `<T>` and create a variable that store a result of your future.
+To get a result of future annotate a function with type `<T>` and create a variable for a result of your future.
 
 ```dart
 final result = await showFutureLoadingOverlay<int>(
